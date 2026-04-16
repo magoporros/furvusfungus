@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>/b/ - Furvus Fungus</title>
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+<header>
+    <h1>/b/ - Furvus Fungus</h1>
+    <div class="nav">
+        [ <a href="index.html">Inicio</a> ] 
+        [ <a href="pages/catalogo.html">Catálogo</a> ] 
+        [ <a href="pages/reglas.html">Reglas</a> ] 
+        [ <a href="pages/faq.html">FAQ</a> ] 
+        [ <a href="pages/tablones.html">Tablones</a> ]
+    </div>
+</header>
+
+
+<div class="container">
+
+    <div class="formulario">
+        <form id="postForm">
+            Usuario:
+            <input type="text" id="usuario" required>
+
+            Email:
+            <input type="email" id="email" required>
+
+            Mensaje:
+            <textarea id="mensaje" rows="3" required></textarea>
+
+            Imagen:
+            <input type="file" id="imagen" accept="image/*">
+
+            <button type="submit">Post</button>
+        </form>
+    </div>
+
+    <div id="posts"></div>
+
+</div>
+
+<script>
+document.getElementById("postForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    const usuario = document.getElementById("usuario").value;
+    const email = document.getElementById("email").value;
+    const mensaje = document.getElementById("mensaje").value;
+    const imagenInput = document.getElementById("imagen");
+
+    const postDiv = document.createElement("div");
+    postDiv.classList.add("post");
+
+    const header = document.createElement("div");
+    header.classList.add("post-header");
+
+    header.innerHTML = `
+        <span class="nombre">${usuario}</span> 
+        <span class="email">(${email})</span>
+    `;
+
+    postDiv.appendChild(header);
+
+    if (imagenInput.files.length > 0) {
+        const img = document.createElement("img");
+        img.src = URL.createObjectURL(imagenInput.files[0]);
+        postDiv.appendChild(img);
+    }
+
+    const texto = document.createElement("div");
+    texto.classList.add("mensaje");
+    texto.textContent = mensaje;
+
+    postDiv.appendChild(texto);
+
+    const divider = document.createElement("div");
+    divider.classList.add("divider");
+
+    document.getElementById("posts").prepend(postDiv);
+    document.getElementById("posts").prepend(divider);
+
+    document.getElementById("postForm").reset();
+});
+</script>
+
+</body>
+</html>

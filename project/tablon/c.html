@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>/c/ - Conspiraciones</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <header>
+        <h1>/c/ - Conspiraciones</h1>
+        <div class="nav">
+            [ <a href="../index.html">Inicio</a> ] 
+            [ <a href="../pages/catalogo.html">Catálogo</a> ] 
+            [ <a href="../pages/reglas.html">Reglas</a> ] 
+            [ <a href="../pages/faq.html">FAQ</a> ] 
+            [ <a href="../pages/tablones.html">Tablones</a> ]
+        </div>
+    </header>
+    
+    <div class="container">
+        <h2>Bienvenido al tablón de Conspiraciones</h2>
+        <p>Comparte tus teorías conspirativas y descubre nuevas ideas.</p>
+        <div class="formulario">
+            <form id="postForm">
+                Usuario:
+                <input type="text" id="usuario" required>
+                Email:
+                <input type="email" id="email" required>
+                Mensaje:
+                <textarea id="mensaje" rows="3" required></textarea>
+                Imagen:
+                <input type="file" id="imagen" accept="image/*">
+                <button type="submit">Post</button>
+            </form>
+        </div>
+        <div id="posts"></div>
+    </div>
+    
+    <footer>
+        <p>&copy; 2026 - Foro /c/</p>
+    </footer>
+    
+    <script src="../js/main.js"></script>
+</body>
+</html>

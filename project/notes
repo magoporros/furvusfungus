@@ -1,0 +1,29 @@
+/a/ - Anime
+/b/ - Business
+/C/ - conspiracies
+/d/ - Death
+/e/ - Dolls 
+/f/ - Films and TV
+/g/ - Gore
+/h/ - Hacking
+/i/ - Ilegal stuff
+/l/ - lost media
+/n/ - NSFW
+/p/ - PDFs
+/v/ - Video games
+/x/ - Paranormal
+        <div class="container">
+        <h2>Explora los Tablones</h2>
+        <ul id="listaTablones">
+            <li><a href="../tablon/a.html">/a/ - Anime</a></li>
+            <li><a href="../tablon/b.html">/b/ - Random</a></li>
+            <li><a href="../tablon/c.html">/c/ - Conspiraciones</a></li>
+            <li><a href="../tablon/d.html">/d/ - Death</a></li>
+            <li><a href="../tablon/e.html">/e/ - Ecchi</a></li>
+            <li><a href="../tablon/g.html">/g/ - Tecnología</a></li>
+            <li><a href="../tablon/k.html">/k/ - Armas</a></li>
+            <li><a href="../tablon/m.html">/m/ - Mechas</a></li>
+            <li><a href="../tablon/v.html">/v/ - Videojuegos</a></li>
+            <li><a href="../tablon/x.html">/x/ - Paranormal</a></li>
+        </ul>
+    </div>

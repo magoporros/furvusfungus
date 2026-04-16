@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>/a/ - Anime</title> <!-- Cambia el título según el tablón -->
+    <link rel="stylesheet" href="../css/style.css"> <!-- Asegúrate de enlazar el CSS correctamente -->
+</head>
+<body>
+    <header>
+        <h1>/a/ - Anime</h1> <!-- Cambia el encabezado según el tablón -->
+        <div class="nav">
+            [ <a href="../index.html">Inicio</a> ] 
+            [ <a href="../pages/catalogo.html">Catálogo</a> ] 
+            [ <a href="../pages/reglas.html">Reglas</a> ] 
+            [ <a href="../pages/faq.html">FAQ</a> ]
+            [ <a href="../pages/tablones.html">Tablones</a> ]
+
+    </header>
+    
+    <div class="container">
+        <h2>Discusión sobre Anime</h2> <!-- Cambia la descripción según el tablón -->
+        <p>Este tablón está dedicado a todo lo relacionado con el anime y el manga. Comparte tus series favoritas, discute teorías y encuentra nuevas recomendaciones.</p>
+        
+        <!-- Formulario para crear nuevos posts -->
+        <div class="formulario">
+            <form id="postForm">
+                Usuario:
+                <input type="text" id="usuario" required>
+                
+                Mensaje:
+                <textarea id="mensaje" rows="3" required></textarea>
+                
+                Imagen (opcional):
+                <input type="file" id="imagen" accept="image/*">
+                
+                <button type="submit">Post</button>
+            </form>
+        </div>
+        
+        <!-- Sección para mostrar los posts -->
+        <div id="posts"></div>
+    </div>
+    
+    <footer>
+        <p>&copy; 2026 - Foro Tablones</p>
+    </footer>
+
+    <script>
+        // Capturar el formulario y añadir posts dinámicamente
+        document.getElementById("postForm").addEventListener("submit", function(e) {
+            e.preventDefault(); // Evitar recargar la página
+
+            const usuario = document.getElementById("usuario").value || "Anónimo";
+            const mensaje = document.getElementById("mensaje").value;
+            const imagenInput = document.getElementById("imagen");
+
+            // Crear elemento de post
+            const postDiv = document.createElement("div");
+            postDiv.classList.add("post");
+
+            // Encabezado del post
+            const header = document.createElement("div");
+            header.classList.add("post-header");
+            header.innerHTML = `
+                <span class="nombre">${usuario}</span>
+            `;
+            postDiv.appendChild(header);
+
+            // Agregar imagen si se subió una
+            if (imagenInput.files.length > 0) {
+                const img = document.createElement("img");
+                img.src = URL.createObjectURL(imagenInput.files[0]);
+                img.alt = "Imagen subida";
+                img.style.maxWidth = "300px";
+                postDiv.appendChild(img);
+            }
+
+            // Mensaje del post
+            const texto = document.createElement("div");
+            texto.classList.add("mensaje");
+            texto.textContent = mensaje;
+            postDiv.appendChild(texto);
+
+            // Agregar post al contenedor de posts
+            const postsContainer = document.getElementById("posts");
+            postsContainer.prepend(postDiv);
+
+            // Limpiar el formulario
+            document.getElementById("postForm").reset();
+        });
+    </script>
+</body>
+</html>

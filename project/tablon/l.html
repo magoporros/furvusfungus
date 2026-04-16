@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>/l/ - Lost media</title>
+    <link rel="stylesheet" href="../css/style.css"> <!-- Enlace al archivo CSS compartido -->
+</head>
+<body>
+    <!-- Cabecera -->
+    <header>
+        <h1>/l/ - Lost media</h1>
+        <div class="nav">
+            [ <a href="../index.html">Inicio</a> ] 
+            [ <a href="../pages/catalogo.html">Catálogo</a> ] 
+            [ <a href="../pages/reglas.html">Reglas</a> ] 
+            [ <a href="../pages/faq.html">FAQ</a> ] 
+            [ <a href="../pages/tablones.html">Tablones</a> ]
+        </div>
+    </header>
+    
+    <!-- Contenido principal -->
+    <div class="container">
+        <h2>Bienvenido al tablón de Lost media</h2>
+        <p>Búsqueda y documentación de contenido perdido u olvidado: vídeos, juegos, series y más.</p>
+        
+        <!-- Formulario para crear nuevos posts -->
+        <div class="formulario">
+            <form id="postForm">
+                <label for="usuario">Usuario:</label>
+                <input type="text" id="usuario" placeholder="Anónimo" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" placeholder="Opcional">
+
+                <label for="mensaje">Mensaje:</label>
+                <textarea id="mensaje" rows="3" placeholder="Escribe tu mensaje aquí..." required></textarea>
+
+                <label for="imagen">Imagen (opcional):</label>
+                <input type="file" id="imagen" accept="image/*">
+
+                <button type="submit">Post</button>
+            </form>
+        </div>
+
+        <!-- Contenedor para mostrar los posts -->
+        <div id="posts"></div>
+    </div>
+    
+    <!-- Pie de página -->
+    <footer>
+        <p>&copy; 2026 - Foro /l/ - Lost media</p>
+    </footer>
+
+    <!-- Enlace al archivo JavaScript compartido -->
+    <script src="../js/main.js"></script>
+</body>
+</html>

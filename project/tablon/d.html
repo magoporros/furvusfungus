@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hilos del Foro</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Foro de Hilos</h1>
+        <div class="nav">
+            [ <a href="../index.html">Inicio</a> ] 
+            [ <a href="../pages/catalogo.html">Catálogo</a> ] 
+            [ <a href="../pages/reglas.html">Reglas</a> ] 
+            [ <a href="../pages/faq.html">FAQ</a> ] 
+            [ <a href="../pages/tablones.html">Tablones</a> ]
+        </div>
+    </header>
+
+    <div class="container">
+        <h2>Crear un Nuevo Hilo</h2>
+        <div class="formulario">
+            <form id="threadForm">
+                <label for="titulo">Título del Hilo:</label>
+                <input type="text" id="titulo" placeholder="Escribe el título del hilo" required>
+
+                <label for="contenido">Contenido:</label>
+                <textarea id="contenido" rows="4" placeholder="Escribe el contenido del hilo" required></textarea>
+
+                <label for="imagen">Imagen (opcional):</label>
+                <input type="file" id="imagen" accept="image/*">
+
+                <button type="submit">Crear Hilo</button>
+            </form>
+        </div>
+
+        <h2>Hilos Recientes</h2>
+        <div id="hilos" class="hilos-container">
+            <!-- Aquí se mostrarán los hilos creados -->
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 - Foro de Hilos</p>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>
+
+<script src="js/main.js"></script>
+ <link rel="stylesheet" href="../css/style.css">
